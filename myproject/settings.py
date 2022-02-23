@@ -25,7 +25,7 @@ SECRET_KEY = '-taty3pv6rv^^y%6stvmx-u=6%+!l63e@(x86y^-55334(#m-s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['myproject.herokuapp.com']
 
 
 # Application definition
@@ -77,10 +77,11 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'todo',
-        'USER':'postgres',
-        'PASSWORD':'Dileep123',
-        'HOST':'localhost',
+        'NAME': 'diik2n97dh3mu',
+        'USER':'fmmuvwburviala',
+        'PASSWORD':'81a4bc57cb1c7c42a4fb65970684683d96368ae57a4668b59e2bcdfd6df5439d',
+        'HOST':'ec2-3-225-79-57.compute-1.amazonaws.com',
+        'PORT':'5432',
     }
 }
 
@@ -121,5 +122,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
+# STATIC_URL = '/static/'
+# STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
+STATIC_ROOT=os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
+django_heroku.settings(locals())
